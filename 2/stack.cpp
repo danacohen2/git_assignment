@@ -13,19 +13,16 @@ void push(stack *s, int element)
 
 int pop(stack *s)
 {
-	int r = -2;
-	list* ls = new list;
-	if (s)
+	if(!isEmpty(s))
 	{
-		list *temp = ls;
-		temp = ls->next;
-		r = s->n->num;
-		delete s->n;
+		s->_count--;
+		return removeHead(s->_elements);
 	}
-	return r;
-
+	else
+	{
+		return 0;
+	}
 }
-
 void initStack(stack *s)
 {
 	push(s, -1);
